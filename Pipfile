@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tortoise-orm = "1.1.8"
+pydantic = ">=2,<3"
+fastapi = "==0.115.2"
+uvicorn = {version = "==0.32.0", extras = ["standard"]}
+
+[dev-packages]
+ruff = "0.4.10"
+
+[requires]
+python_version = "3.13"

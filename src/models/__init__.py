@@ -1,6 +1,7 @@
 from enums import Genre, UserStatus
 from tortoise import Tortoise, fields
 from tortoise.models import Model
+from tortoise.validators import EmailValidator
 
 
 class Author(Model):
@@ -24,6 +25,7 @@ class Book(Model):
 
 class User(Model):
     username = fields.CharField(max_length=50, unique=True)
+    email = fields.CharField(max_length=254, unique=True, null=True, validators=[EmailValidator()])
     password = fields.CharField(max_length=32)
     first_name = fields.CharField(max_length=100, null=True)
     last_name = fields.CharField(max_length=100, null=True)

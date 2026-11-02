@@ -31,6 +31,12 @@ class User(Model):
     books = fields.ManyToManyField("models.Book", related_name="users")
 
 
+class Log(Model):
+    action = fields.CharField(max_length=50)
+    message = fields.TextField(null=True)
+    created_at = fields.DatetimeField(auto_now_add=True)
+
+
 def init_tortoise(app) -> None:
     """Example hook for application startup. This is intentionally lightweight.
 

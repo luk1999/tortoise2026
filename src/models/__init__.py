@@ -31,7 +31,7 @@ class User(Model):
     books = fields.ManyToManyField("models.Book", related_name="users")
 
 
-class Log(Model):
+class Action(Model):
     action = fields.CharField(max_length=50)
     message = fields.TextField(null=True)
     created_at = fields.DatetimeField(auto_now_add=True)

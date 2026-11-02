@@ -1,4 +1,4 @@
-from enums import Genre, UserStatus
+from enums import Genre, UserAction, UserStatus
 from tortoise import Tortoise, fields
 from tortoise.models import Model
 
@@ -32,7 +32,7 @@ class User(Model):
 
 
 class Log(Model):
-    action = fields.CharField(max_length=50)
+    action = fields.CharEnumField(enum_type=UserAction, max_length=50)
     message = fields.TextField(null=True)
     created_at = fields.DatetimeField(auto_now_add=True)
 

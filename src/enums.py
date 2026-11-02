@@ -19,3 +19,8 @@ class UserStatus(StrEnum):
     INACTIVE = "inactive"
     ACTIVE = "active"
     DELETED = "deleted"
+
+
+class UserAction(StrEnum):
+    LOGIN = "login"
+    LOGOUT = "logout"
